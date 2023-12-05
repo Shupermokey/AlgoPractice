@@ -21,3 +21,9 @@ test('ReverseInt flips a negative number', () => {
   expect(reverseInt(-90)).toEqual(-9);
   expect(reverseInt(-2359)).toEqual(-9532);
 });
+
+test('ReverseInt with leading 0s', () => {
+  expect(reverseInt(-500)).toEqual(-5);
+  expect(reverseInt(5000000)).toEqual(5);
+
+});
