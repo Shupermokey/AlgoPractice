@@ -10,38 +10,48 @@
 
 function anagrams(stringA, stringB) {
 
-  const charsA = countChars(stringA)
-  const charsB = countChars(stringB)
-
-  if(Object.keys(charsA).length === Object.keys(charsB).length){
-    for(let i of Object.keys(charsA)){
-      if(charsA[i] !== charsB[i]){
-        return false;
-      }
-    }
-    return true
-  }
-  return false;
+  return stripAndLowerCaseAndSort(stringA) === stripAndLowerCaseAndSort(stringB);
+  
 
 }
 
-function stripAndLowerCase(input) {
-  return input.replace(/[^\w]/g, "").toLowerCase();
-}
-
-function countChars(input){
-  input = stripAndLowerCase(input);
-
-  let chars = {};
-  for(let i of input){
-    if(!chars[i]){
-      chars[i] = 1
-    }
-    else {
-      chars[i] += 1
-    }
-  }
-  return chars;
+function stripAndLowerCaseAndSort(input) {
+return input.replace(/[^\w]/g, "").toLowerCase().split("").sort().join("  ");
 }
 
 module.exports = anagrams;
+
+
+// const charsA = countChars(stringA)
+// const charsB = countChars(stringB)
+
+// if(Object.keys(charsA).length === Object.keys(charsB).length){
+//   for(let i of Object.keys(charsA)){
+//     if(charsA[i] !== charsB[i]){
+//       return false;
+//     }
+//   }
+//   return true
+// }
+// return false;
+
+// }
+
+// function stripAndLowerCase(input) {
+// return input.replace(/[^\w]/g, "").toLowerCase();
+// }
+
+// function countChars(input){
+// input = stripAndLowerCase(input);
+
+// let chars = {};
+// for(let i of input){
+//   if(!chars[i]){
+//     chars[i] = 1
+//   }
+//   else {
+//     chars[i] += 1
+//   }
+// }
+// return chars;
+// }
