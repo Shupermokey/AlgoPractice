@@ -15,13 +15,14 @@
 //       '#####'
 
 function pyramid(n) {
-  let spaces = n -1;
+  let spaces = n - 1;
   let char = "#";
   let repeat = 1;
+  let repeatByNum = 2;
   for(let i = 0; i < n; i++) {
     console.log(" ".repeat(spaces) + char.repeat(repeat) + " ".repeat(spaces));
-    spaces -=1;
-    repeat +=2;
+    spaces -= 1;
+    repeat += repeatByNum;
   }
 }
 
