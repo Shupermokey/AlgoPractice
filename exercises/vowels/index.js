@@ -10,8 +10,9 @@
 function vowels(str) {
   let vowelList = "aeiou".split('');
   let count = 0;
+  str = str.toLowerCase();
   for(let i of vowelList){
-    if(str.toLowerCase().includes(i)){
+    if(str.includes(i)){
       count++;
     }
   }
@@ -19,3 +20,17 @@ function vowels(str) {
 }
 
 module.exports = vowels;
+
+
+
+/* 
+Can also use an regular expression
+
+str.match(/[aeiou]/gi)
+g - don't stop at the first true
+i - take care of cases
+
+match will return an array if true, and null if false
+const matches = str.match(/[aeiou]/gi)
+return matches ? matches.length : 0;
+*/
